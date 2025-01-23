@@ -1,87 +1,55 @@
 "use client"; // This marks the component as a client component
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar } from "@/components/ui/avatar";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 export default function AboutPage() {
   return (
-    <main className="container mx-auto px-6 py-8">
-      {/* Section for About Us */}
-      <section className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">About Us</h1>
-        <p className="text-lg text-gray-600 mb-6">
-          At Luminous, we are passionate about building exceptional digital
-          experiences. Our mission is to create innovative solutions that empower
-          individuals and businesses worldwide.
-        </p>
-        <Card className="w-full max-w-4xl mx-auto">
-          <CardHeader>
-            <h2 className="text-2xl font-semibold text-gray-800">Our Vision</h2>
-          </CardHeader>
-          <CardContent>
-            <p className="text-lg text-gray-600">
-              We strive to be a leader in the tech space, constantly pushing the
-              boundaries of what is possible through technology.
-            </p>
-          </CardContent>
-        </Card>
-      </section>
+    <>
+      <Breadcrumb className="m-4">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/" className="breadcrumb">Home</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator>
+            /
+          </BreadcrumbSeparator>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/about" className="breadcrumb">About</BreadcrumbLink>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+      <main className="container mx-auto p-4">
+        {/* Section for About Us */}
 
-      {/* Section for Our Journey */}
-      <section>
-        <h2 className="text-3xl font-semibold text-gray-800 mb-4">Our Journey</h2>
-        <p className="text-gray-600 mb-6">
-          Luminous started as a small team of enthusiasts who believed in the
-          transformative power of technology. Over the years, we&apos;ve grown into
-          a community of developers, designers, and innovators dedicated to
-          delivering cutting-edge solutions.
-        </p>
-        <Card className="w-full max-w-4xl mx-auto">
-          <CardContent>
-            <p className="text-lg text-gray-600">
-              Our journey has been shaped by innovation, challenges, and a
-              relentless pursuit of excellence. We&apos;ve worked on projects that
-              span various industries and have seen remarkable transformations
-              through technology.
-            </p>
-          </CardContent>
-        </Card>
-      </section>
-
-      {/* Section for Our Team */}
-      <section className="mt-12">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-4">Our Team</h2>
-        <div className="flex justify-center gap-8">
-          <Avatar
-            className="w-24 h-24 border-2 border-gray-300"
-            src="/team-member-1.jpg"
-            alt="Team Member 1"
-          />
-          <Avatar
-            className="w-24 h-24 border-2 border-gray-300"
-            src="/team-member-2.jpg"
-            alt="Team Member 2"
-          />
-          <Avatar
-            className="w-24 h-24 border-2 border-gray-300"
-            src="/team-member-3.jpg"
-            alt="Team Member 3"
-          />
+        <header className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-8 rounded-lg mb-6 text-center">
+          <h1 className="text-5xl font-bold mb-2">About Us</h1>
+          <p className="text-xl">Inspiring individuals through knowledge, mindfulness, and community.</p>
+        </header>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-col justify-center">
+            <h2 className="text-3xl font-semibold mb-4">Our Mission</h2>
+            <p className="text-lg text-gray-700">Our mission is to empower individuals to achieve personal growth and enlightenment through shared knowledge and community support.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center text-center">
+            <Card className="p-4 transition-transform transform hover:scale-105">
+              <CardTitle className="font-bold text-lg">Jane Doe</CardTitle>
+              <CardHeader>Founder & Content Creator</CardHeader>
+              <CardContent className="text-gray-600">A lifelong learner passionate about mindfulness and sustainable living.</CardContent>
+            </Card>
+            <Card className="p-4 transition-transform transform hover:scale-105">
+              <CardTitle className="font-bold text-lg">John Smith</CardTitle>
+              <CardHeader>Community Manager</CardHeader>
+              <CardContent className="text-gray-600">Dedicated to building a supportive community and fostering connections.</CardContent>
+            </Card>
+          </div>
         </div>
-        <p className="text-center text-gray-600 mt-4">Meet our talented team!</p>
-      </section>
-
-      {/* Section for Contact */}
-      <section className="mt-12 text-center">
-        <Button
-          variant="outline"
-          className="text-gray-800 border-gray-800 hover:bg-gray-800 hover:text-white"
-          onClick={() => alert("Thank you for reaching out!")}
-        >
-          Get in Touch
-        </Button>
-      </section>
-    </main>
+        <div className="text-center mt-6">
+          <Button className="bg-blue-500 text-white hover:bg-blue-600">Join our Journey</Button>
+        </div>
+      </main>
+    </>
   );
 }

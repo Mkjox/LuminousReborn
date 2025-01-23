@@ -28,14 +28,14 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader>
-        <h1 className="text-xl font-semibold">Luminous Reborn</h1>
+        <h1 className="text-l font-semibold p-4">Luminous Reborn</h1>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
           <SidebarMenu>
             {routes.map((route) => (
               <SidebarMenuItem key={route.path}>
-                <SidebarMenuButton asChild isActive={pathname === route.path}>
+                <SidebarMenuButton asChild isActive={pathname === route.path} className="p-4">
                   <Link href={route.path}>
                     {route.icon}
                     <span>{route.name}</span>
@@ -48,7 +48,6 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter>
         <ModeToggle/>
-        {/* Add footer content here */}
       </SidebarFooter>
     </Sidebar>
   );
